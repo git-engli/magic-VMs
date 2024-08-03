@@ -12,10 +12,10 @@ sudo DEBIAN_FRONTEND=noninteractive \
 
     
 sudo apt update
-curl -L -o chrome-remote-desktop_current_amd64.deb \
-    https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-sudo DEBIAN_FRONTEND=noninteractive \
-    apt-get install --assume-yes ./chrome-remote-desktop_current_amd64.deb
+#curl -L -o chrome-remote-desktop_current_amd64.deb \
+#    https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+#sudo DEBIAN_FRONTEND=noninteractive \
+#    apt-get install --assume-yes ./chrome-remote-desktop_current_amd64.deb
 
 
 sudo DEBIAN_FRONTEND=noninteractive \
@@ -26,13 +26,14 @@ sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome
 sudo systemctl disable lightdm.service
 
 curl -L -o google-chrome-stable_current_amd64.deb \
-https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
 sudo apt install --assume-yes ./google-chrome-stable_current_amd64.deb
 
 #sudo adduser engli
 #sudo passwd engli
 
-#add to sudoers  usermod -aG sudo engli
+#usermod -aG sudo engli
 #sudo su
 #vi /etc/sudoers
 
@@ -54,14 +55,12 @@ sudo apt install ufw
 
 
 
-mkdir ~/.config/chrome-remote-desktop
-You15:27
-sudo systemctl status chrome-remote-desktop@$USER
-You15:30
-sudo service chrome-remote-desktop restart
-Brodie Gould15:31
-https://askubuntu.com/questions/605381/chrome-remote-desktop-failed-to-start-remote-access-service#:~:text=I%20had%20similar%20problem
-You15:33
-sudo usermod -a -G chrome-remote-desktop $USER
-You15:36
-sudo groupadd chrome-remote-desktop usermod -a -G chrome-remote-desktop
+#mkdir ~/.config/chrome-remote-desktop
+
+#sudo systemctl status chrome-remote-desktop@$USER
+
+#sudo service chrome-remote-desktop restart
+
+#sudo usermod -a -G chrome-remote-desktop $USER
+
+#sudo groupadd chrome-remote-desktop usermod -a -G chrome-remote-desktop
