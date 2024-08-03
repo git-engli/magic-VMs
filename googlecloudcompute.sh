@@ -29,9 +29,10 @@ curl -L -o google-chrome-stable_current_amd64.deb \
 https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes ./google-chrome-stable_current_amd64.deb
 
-#sudo passwd username
+#sudo add user engli
+#sudo passwd engli
 
-#add to sudoers  usermod -aG sudo username
+#add to sudoers  usermod -aG sudo engli
 #sudo su
 #vi /etc/sudoers
 
