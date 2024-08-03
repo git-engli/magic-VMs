@@ -37,7 +37,7 @@ sudo apt install --assume-yes ./google-chrome-stable_current_amd64.deb
 #vi /etc/sudoers
 
 #i
-#username ALL...
+#engli ALL...
 
 #:wq!
 
