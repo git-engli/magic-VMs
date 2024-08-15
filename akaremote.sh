@@ -1,3 +1,5 @@
+
+#!/bin/bash
 #create vm
 
 #login ssh
@@ -41,6 +43,25 @@ sudo apt install --assume-yes ./google-chrome-stable_current_amd64.deb
 #engli ALL=(ALL:ALL) ALL
 
 #:wq!
+
+
+# Check if running as root
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
+# Add the user to sudoers file using visudo
+echo "engli ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
+# Validate the sudoers file
+visudo -c
+if [ "$?" -eq "0" ]; then
+   echo "Sudoers file valid"
+else
+   echo "Sudoers file has a syntax error. Backing from the changes."
+   cp /etc/sudoers.bak /etc/sudoers
+fi
 
 
 sudo apt install git
